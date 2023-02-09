@@ -49,4 +49,4 @@ jobs:
           file: nginx.dockerfile
           platforms: linux/amd64,linux/arm/v7,linux/arm64/v8,linux/386
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}:latest
