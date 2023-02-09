@@ -41,12 +41,12 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
-      # Build nginx images
+      # Build Apache httpd images
       - name: Build and push experimental image
         if: github.event_name == 'push'
         uses: docker/build-push-action@v4
         with:
-          file: nginx.dockerfile
+          file: apache.dockerfile
           platforms: linux/amd64,linux/arm/v7,linux/arm64/v8,linux/386
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}:latest
